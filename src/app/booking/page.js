@@ -1,5 +1,5 @@
 
-import { ThemeToggle } from "@/components/theme-toggle";
+// import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function BookingPage() {
   return (
@@ -11,7 +11,7 @@ export default function BookingPage() {
             <h1 className="text-xl font-bold tracking-tight text-amber-400">
               Book an Appointment
             </h1>
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
         </div>
       </header>

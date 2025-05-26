@@ -252,7 +252,7 @@ export default function Home() {
                 Get Directions
               </a>
               <a
-                href={businessData.order_urls[0]}
+                href={businessData.order_urls[1]}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-slate-900 dark:bg-primary/90 dark:text-primary-foreground rounded-lg hover:bg-amber-400 dark:hover:bg-primary transition-all hover:scale-105 hover:shadow-lg"
               >
                 <Calendar className="w-4 h-4" />
