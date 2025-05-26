@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import Header from "@/components/Header";
-import { ThemeToggle } from "@/components/theme-toggle";
 import GallerySlider from "@/components/GallerySlider";
 import ReviewsSlider from "@/components/ReviewsSlider";
 import MenuSlider from "@/components/MenuSlider";

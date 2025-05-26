@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Header({ businessName }) {
   return (
