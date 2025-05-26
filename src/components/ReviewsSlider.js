@@ -80,7 +80,7 @@ export default function ReviewsSlider() {
                   </div>
                 </div>
               </div>
-              <p className="text-slate-300 flex-1">"{review.text}"</p>
+              <p className="text-slate-300 flex-1">{review.text}</p>
               <p className="text-sm text-slate-400 mt-4">{review.time}</p>
             </div>
           </SwiperSlide>

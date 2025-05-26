@@ -9,7 +9,6 @@ import {
   Instagram,
   Facebook,
   Calendar,
-  Sparkles,
 } from "lucide-react";
 import Header from "@/components/Header";
 import GallerySlider from "@/components/GallerySlider";
@@ -281,7 +280,7 @@ export default function Home() {
             About Blue Bottle Coffee
           </h2>
           <p className="text-slate-200 dark:text-muted-foreground max-w-3xl mx-auto">
-            At Blue Bottle Coffee, we are passionate about crafting the perfect cup. Our journey began with a simple mission: to serve delicious, freshly roasted coffee made from the world's best beans. We believe in quality, sustainability, and creating a welcoming space for coffee lovers to gather, connect, and enjoy.
+            At Blue Bottle Coffee, we are passionate about crafting the perfect cup. Our journey began with a simple mission: to serve delicious, freshly roasted coffee made from the world best beans. We believe in quality, sustainability, and creating a welcoming space for coffee lovers to gather, connect, and enjoy.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -289,7 +288,7 @@ export default function Home() {
             <Coffee className="w-12 h-12 text-amber-400 dark:text-primary mb-4 animate-pulse" />
             <h3 className="text-xl font-semibold mb-2 text-amber-400 dark:text-primary">Coffee Expertise</h3>
             <p className="text-slate-200 dark:text-muted-foreground">
-              Our baristas are true coffee artisans, expertly brewing every cup to highlight the unique flavors of each origin. From espresso to pour over, we're dedicated to the craft of specialty coffee.
+              Our baristas are true coffee artisans, expertly brewing every cup to highlight the unique flavors of each origin. From espresso to pour over, we are dedicated to the craft of specialty coffee.
             </p>
           </div>
           <div className="p-6 rounded-xl bg-slate-800/50 dark:bg-gradient-to-br dark:from-background/50 dark:to-background border border-slate-700 dark:border-border/50 hover:border-amber-500 dark:hover:border-primary/50 transition-all hover:scale-105 hover:shadow-lg">

@@ -1,4 +1,4 @@
-import { Calendar, Clock, Scissors } from "lucide-react";
+
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function BookingPage() {
@@ -26,7 +26,7 @@ export default function BookingPage() {
                 Schedule Your Service
               </h2>
               <p className="text-slate-300">
-                Choose your preferred service, date, and time. We'll confirm your appointment shortly.
+                Choose your preferred service, date, and time. We will confirm your appointment shortly.
               </p>
             </div>
 
