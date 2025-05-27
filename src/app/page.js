@@ -199,7 +199,7 @@ export default function Home() {
       <Header businessName={businessData.name} />
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[90vh] flex items-center">
+      <section id="home" className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[85vh] sm:min-h-[90vh] flex items-center">
         {/* Background Image with darker overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -209,53 +209,53 @@ export default function Home() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-[#1e3932]/30" />
+          <div className="absolute inset-0 bg-[#1e3932]/70" />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="space-y-8 animate-fade-in max-w-2xl">
-            <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-lg">
-  <span className="block text-[#fbbf24]">Welcome to</span>
-  <span className="block text-white text-opacity-95 mt-2 bg-gradient-to-r from-[#00754a] to-[#1e3932] bg-clip-text text-transparent">
-    {businessData.name}
-  </span>
-</h1>
-              <p className="text-xl font-medium tracking-wide text-[#f1f8f5] border-l-4 border-[#00754a] pl-4 py-2">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
+          <div className="space-y-6 sm:space-y-8 animate-fade-in max-w-2xl">
+            <div className="space-y-4 sm:space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-lg ">
+                <span className="block text-[#fbbf24] text-3xl sm:text-4xl lg:text-5xl">Welcome to</span>
+                <span className="block text-white text-opacity-95 mt-1 sm:mt-2 bg-gradient-to-r from-[#00754a] to-[#1e3932] bg-clip-text text-transparent">
+                  {businessData.name}
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl font-medium tracking-wide text-[#f1f8f5] border-l-4 border-[#00754a] pl-3 sm:pl-4 py-1 sm:py-2">
                 {businessData.category}
               </p>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-[#00754a]" />
-                  <span className="text-[#f1f8f5]">{businessData.location}</span>
+                  <span className="text-[#f1f8f5] text-sm sm:text-base">{businessData.location}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-[#00754a]" />
-                  <span className="text-[#f1f8f5]">{businessData.closing_time}</span>
+                  <span className="text-[#f1f8f5] text-sm sm:text-base">{businessData.closing_time}</span>
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href={`tel:${businessData.call_url}`}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium text-sm sm:text-base"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Call Now
               </a>
               <a
                 href={businessData.directions_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full hover:bg-white/20 transition-all hover:scale-105 hover:shadow-lg font-medium"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white rounded-full hover:bg-white/20 transition-all hover:scale-105 hover:shadow-lg font-medium text-sm sm:text-base"
               >
-                <MapPin className="w-5 h-5" />
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                 Get Directions
               </a>
               <a
                 href={businessData.order_urls[1]}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium text-sm sm:text-base"
               >
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                 Book Online
               </a>
             </div>
