@@ -42,9 +42,9 @@ const reviews = [
   },
 ];
 
-export default function ReviewsSlider() {
+export default function ReviewsSlider({ themeColor = "#00754a", className = "" }) {
   return (
-    <div className="relative">
+    <div className={`relative ${className}`}>
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={32}
@@ -59,18 +59,18 @@ export default function ReviewsSlider() {
       >
         {reviews.map((review, idx) => (
           <SwiperSlide key={idx}>
-            <div className="p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-amber-500 transition-all hover:scale-105 hover:shadow-lg flex flex-col h-full">
+            <div className="p-6 rounded-2xl bg-white shadow-lg border-2 border-[#f1f8f5] hover:border-[#00754a] transition-all hover:scale-105 hover:shadow-xl flex flex-col h-full">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-amber-400/20 flex items-center justify-center">
-                  <span className="text-amber-400 font-bold text-lg">{review.initials}</span>
+                <div className="w-12 h-12 rounded-full bg-[#00754a]/10 flex items-center justify-center">
+                  <span className="text-[#00754a] font-bold text-lg">{review.initials}</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-200">{review.name}</h4>
+                  <h4 className="font-semibold text-[#1e3932]">{review.name}</h4>
                   <div className="flex items-center gap-1">
                     {[...Array(review.rating)].map((_, i) => (
                       <svg
                         key={i}
-                        className="w-4 h-4 text-amber-400"
+                        className="w-4 h-4 text-[#00754a]"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -80,8 +80,8 @@ export default function ReviewsSlider() {
                   </div>
                 </div>
               </div>
-              <p className="text-slate-300 flex-1">{review.text}</p>
-              <p className="text-sm text-slate-400 mt-4">{review.time}</p>
+              <p className="text-[#1e3932]/80 flex-1">{review.text}</p>
+              <p className="text-sm text-[#1e3932]/60 mt-4">{review.time}</p>
             </div>
           </SwiperSlide>
         ))}
@@ -91,20 +91,21 @@ export default function ReviewsSlider() {
           bottom: -32px !important;
         }
         .reviews-swiper .swiper-pagination-bullet {
-          background: #f59e42;
+          background: ${themeColor};
           opacity: 0.4;
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
           margin: 0 6px !important;
           border-radius: 9999px;
           box-shadow: 0 1px 4px rgba(0,0,0,0.08);
           border: 2px solid #fff;
-          transition: opacity 0.2s, background 0.2s;
+          transition: all 0.2s ease;
         }
         .reviews-swiper .swiper-pagination-bullet-active {
           opacity: 1;
-          background: #f59e42;
-          border-color: #f59e42;
+          background: ${themeColor};
+          border-color: ${themeColor};
+          transform: scale(1.2);
         }
       `}</style>
     </div>

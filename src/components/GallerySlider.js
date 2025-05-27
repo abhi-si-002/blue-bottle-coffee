@@ -6,9 +6,9 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import Image from "next/image";
 
-export default function GallerySlider({ images }) {
+export default function GallerySlider({ images, themeColor = "#00754a", className = "" }) {
   return (
-    <div className="relative">
+    <div className={`relative ${className}`}>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={32}
@@ -23,14 +23,14 @@ export default function GallerySlider({ images }) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-2xl border-2 border-amber-100 dark:border-primary/30 hover:border-amber-400 dark:hover:border-primary transition-all duration-300 bg-gradient-to-br from-white/60 to-amber-50 dark:from-background/80 dark:to-background/60 ">
+            <div className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg border-2 border-[#f1f8f5] hover:border-[#00754a] transition-all duration-300 bg-gradient-to-br from-white/60 to-[#f1f8f5]">
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1e3932]/70 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none rounded-2xl" />
             </div>
           </SwiperSlide>
         ))}
@@ -39,38 +39,40 @@ export default function GallerySlider({ images }) {
       <style jsx global>{`
         .gallery-swiper .swiper-button-next,
         .gallery-swiper .swiper-button-prev {
-          color: #f59e42;
-          background: rgba(255,255,255,0.85);
+          color: ${themeColor};
+          background: rgba(255,255,255,0.95);
           border-radius: 9999px;
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-          width: 44px;
-          height: 44px;
+          width: 48px;
+          height: 48px;
           top: 45%;
-          transition: background 0.2s, color 0.2s;
+          transition: all 0.2s ease;
         }
         .gallery-swiper .swiper-button-next:hover,
         .gallery-swiper .swiper-button-prev:hover {
-          background: #f59e42;
+          background: ${themeColor};
           color: #fff;
+          transform: scale(1.05);
         }
         .gallery-swiper .swiper-pagination-bullets {
           bottom: -32px !important;
         }
         .gallery-swiper .swiper-pagination-bullet {
-          background: #f59e42;
+          background: ${themeColor};
           opacity: 0.4;
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
           margin: 0 6px !important;
           border-radius: 9999px;
           box-shadow: 0 1px 4px rgba(0,0,0,0.08);
           border: 2px solid #fff;
-          transition: opacity 0.2s, background 0.2s;
+          transition: all 0.2s ease;
         }
         .gallery-swiper .swiper-pagination-bullet-active {
           opacity: 1;
-          background: #f59e42;
-          border-color: #f59e42;
+          background: ${themeColor};
+          border-color: ${themeColor};
+          transform: scale(1.2);
         }
       `}</style>
     </div>

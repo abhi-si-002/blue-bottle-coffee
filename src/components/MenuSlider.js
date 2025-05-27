@@ -4,9 +4,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 
-export default function MenuSlider({ items }) {
+export default function MenuSlider({ items, themeColor = "#00754a", className = "" }) {
   return (
-    <div className="relative">
+    <div className={`relative ${className}`}>
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={32}
@@ -21,11 +21,11 @@ export default function MenuSlider({ items }) {
       >
         {items.map((item, idx) => (
           <SwiperSlide key={item.title + idx}>
-            <div className="p-6 rounded-xl bg-slate-800/50 dark:bg-gradient-to-br dark:from-background/50 dark:to-background border border-slate-700 dark:border-border/50 hover:border-amber-500 dark:hover:border-primary/50 transition-all hover:scale-105 hover:shadow-lg">
-              <h4 className="text-xl font-semibold mb-2 text-amber-400 dark:text-primary">{item.title}</h4>
-              <p className="text-slate-200 dark:text-muted-foreground mb-4">{item.description}</p>
+            <div className="p-6 rounded-2xl bg-white shadow-lg border-2 border-[#f1f8f5] hover:border-[#00754a] transition-all hover:scale-105 hover:shadow-xl">
+              <h4 className="text-xl font-semibold mb-2 text-[#1e3932]">{item.title}</h4>
+              <p className="text-[#1e3932]/80 mb-4">{item.description}</p>
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-amber-400 dark:text-primary">{item.price}</span>
+                <span className="text-2xl font-bold text-[#00754a]">{item.price}</span>
               </div>
             </div>
           </SwiperSlide>
@@ -36,20 +36,21 @@ export default function MenuSlider({ items }) {
           bottom: -32px !important;
         }
         .menu-swiper .swiper-pagination-bullet {
-          background: #f59e42;
+          background: ${themeColor};
           opacity: 0.4;
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
           margin: 0 6px !important;
           border-radius: 9999px;
           box-shadow: 0 1px 4px rgba(0,0,0,0.08);
           border: 2px solid #fff;
-          transition: opacity 0.2s, background 0.2s;
+          transition: all 0.2s ease;
         }
         .menu-swiper .swiper-pagination-bullet-active {
           opacity: 1;
-          background: #f59e42;
-          border-color: #f59e42;
+          background: ${themeColor};
+          border-color: ${themeColor};
+          transform: scale(1.2);
         }
       `}</style>
     </div>

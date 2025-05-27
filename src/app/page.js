@@ -195,12 +195,12 @@ const galleryImages = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#14213d] text-white">
+    <div className="min-h-screen bg-[#f1f8f5] text-[#1e3932]">
       <Header businessName={businessData.name} />
 
-      {/* Hero Section styled as a white card, centered, with no overlay */}
-      <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[80vh] flex items-center">
-        {/* Background Image */}
+      {/* Hero Section */}
+      <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[90vh] flex items-center">
+        {/* Background Image with darker overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_640,q_auto/2025/05%20May/May%20Wk%204/HP_MAYWK4_M1C_Mobile.jpg"
@@ -209,52 +209,50 @@ export default function Home() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-[#1e3932]/70" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="space-y-8 animate-fade-in max-w-2xl">
-            <div className="space-y-4">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-[#fbbf24] via-yellow-300 to-yellow-200 bg-clip-text text-transparent animate-gradient">
-                  Welcome to {businessData.name}
-                </span>
+            <div className="space-y-6">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
+                Welcome to {businessData.name}
               </h2>
-              <p className="text-xl font-medium tracking-wide text-[#e5e7eb] border-l-4 border-[#fbbf24] pl-4 py-2">
+              <p className="text-xl font-medium tracking-wide text-[#f1f8f5] border-l-4 border-[#00754a] pl-4 py-2">
                 {businessData.category}
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-[#fbbf24] animate-bounce" />
-                  <span className="text-[#e5e7eb]">{businessData.location}</span>
+                  <MapPin className="w-5 h-5 text-[#00754a]" />
+                  <span className="text-[#f1f8f5]">{businessData.location}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-[#fbbf24] animate-pulse" />
-                  <span className="text-[#e5e7eb]">{businessData.closing_time}</span>
+                  <Clock className="w-5 h-5 text-[#00754a]" />
+                  <span className="text-[#f1f8f5]">{businessData.closing_time}</span>
                 </div>
               </div>
             </div>
             <div className="flex flex-wrap gap-4">
               <a
                 href={`tel:${businessData.call_url}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#fbbf24] text-[#14213d] rounded-lg hover:bg-[#ffe066] transition-all hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-5 h-5" />
                 Call Now
               </a>
               <a
                 href={businessData.directions_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#22315a] text-[#e5e7eb] rounded-lg hover:bg-[#14213d] transition-all hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full hover:bg-white/20 transition-all hover:scale-105 hover:shadow-lg font-medium"
               >
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-5 h-5" />
                 Get Directions
               </a>
               <a
                 href={businessData.order_urls[1]}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#fbbf24] text-[#14213d] rounded-lg hover:bg-[#ffe066] transition-all hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium"
               >
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-5 h-5" />
                 Book Online
               </a>
             </div>
@@ -263,42 +261,53 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#22315a]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#fbbf24]">
+          <h2 className="text-4xl font-bold text-center mb-4 text-[#1e3932]">
             Our Gallery
           </h2>
-          <GallerySlider images={galleryImages} />
+          <p className="text-center text-[#1e3932]/80 mb-12 max-w-2xl mx-auto">
+            Take a peek inside our coffee haven, where every corner tells a story of passion and craftsmanship.
+          </p>
+          <GallerySlider 
+            images={galleryImages} 
+            themeColor="#00754a"
+            className="rounded-2xl overflow-hidden shadow-lg"
+          />
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 flex justify-center items-center bg-[#14213d]">
-        <div className="max-w-2xl w-full text-center">
-          <h2 className="text-3xl font-bold mb-4 text-[#fbbf24]">About Blue Bottle Coffee</h2>
-          <p className="text-[#e5e7eb] max-w-2xl mx-auto text-lg">
-            At Blue Bottle Coffee, we are passionate about crafting the perfect cup. Our journey began with a simple mission: to serve delicious, freshly roasted coffee made from the world best beans. We believe in quality, sustainability, and creating a welcoming space for coffee lovers to gather, connect, and enjoy.
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f1f8f5]">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6 text-[#1e3932]">About Blue Bottle Coffee</h2>
+          <p className="text-[#1e3932]/80 text-lg leading-relaxed">
+            At Blue Bottle Coffee, we are passionate about crafting the perfect cup. Our journey began with a simple mission: to serve delicious, freshly roasted coffee made from the world's best beans. We believe in quality, sustainability, and creating a welcoming space for coffee lovers to gather, connect, and enjoy.
           </p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#22315a]">
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-[#fbbf24]">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-[#1e3932]">
               Our Menu
             </h2>
-            <p className="text-[#e5e7eb] max-w-2xl mx-auto">
+            <p className="text-[#1e3932]/80 max-w-2xl mx-auto text-lg">
               Explore our selection of expertly crafted coffee drinks, specialty beverages, and sweet treats. All items are made with the highest quality ingredients and care.
             </p>
           </div>
           {['Espresso', 'Drip Coffee', 'Iced Coffee', 'Specialties'].map((cat) => {
             const items = services.filter(s => s.category === cat);
             return (
-              <div key={cat} className="mb-10">
-                <h3 className="text-2xl font-semibold mb-4 text-[#fbbf24]">{cat}</h3>
-                <MenuSlider items={items} />
+              <div key={cat} className="mb-16">
+                <h3 className="text-2xl font-semibold mb-6 text-[#00754a]">{cat}</h3>
+                <MenuSlider 
+                  items={items} 
+                  themeColor="#00754a"
+                  className="rounded-2xl overflow-hidden shadow-lg"
+                />
               </div>
             );
           })}
@@ -306,95 +315,98 @@ export default function Home() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#14213d]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f1f8f5]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-[#fbbf24]">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-[#1e3932]">
               Customer Reviews
             </h2>
-            <p className="text-[#e5e7eb] max-w-2xl mx-auto">
+            <p className="text-[#1e3932]/80 max-w-2xl mx-auto text-lg">
               See what our clients have to say about their experience at Blue Bottle Coffee
             </p>
           </div>
-          <ReviewsSlider />
+          <ReviewsSlider 
+            themeColor="#00754a"
+            className="rounded-2xl overflow-hidden shadow-lg"
+          />
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="py-12 px-4 sm:px-6 lg:px-8 bg-[#22315a] border-t border-[#14213d]">
+      <footer id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1e3932] text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-[#fbbf24]">Contact Us</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#00754a]">Contact Us</h3>
               <div className="space-y-4">
-                <p className="flex items-center gap-2 text-[#e5e7eb]">
-                  <Phone className="w-4 h-4 text-[#fbbf24]" />
-                  <a href={`tel:${businessData.phone}`} className="hover:text-[#fbbf24] transition-colors">
+                <p className="flex items-center gap-3 text-[#f1f8f5]">
+                  <Phone className="w-5 h-5 text-[#00754a]" />
+                  <a href={`tel:${businessData.phone}`} className="hover:text-[#00754a] transition-colors">
                     {businessData.phone}
                   </a>
                 </p>
-                <p className="flex items-center gap-2 text-[#e5e7eb]">
-                  <MapPin className="w-4 h-4 text-[#fbbf24]" />
+                <p className="flex items-center gap-3 text-[#f1f8f5]">
+                  <MapPin className="w-5 h-5 text-[#00754a]" />
                   <a 
                     href={businessData.directions_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#fbbf24] transition-colors"
+                    className="hover:text-[#00754a] transition-colors"
                   >
                     {businessData.address}
                   </a>
                 </p>
-                <p className="text-[#cbd5e1] text-sm">
+                <p className="text-[#f1f8f5]/80 text-sm mt-4">
                   Located in Midtown Manhattan, just steps from Rockefeller Center and major attractions.
                 </p>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-[#fbbf24]">Hours</h3>
-              <div className="space-y-2">
-                <p className="text-[#e5e7eb]">
+              <h3 className="text-xl font-semibold mb-6 text-[#00754a]">Hours</h3>
+              <div className="space-y-3">
+                <p className="text-[#f1f8f5]">
                   <span className="font-medium">Monday - Sunday:</span> 7:00 AM - 6:00 PM
                 </p>
-                <p className="text-[#cbd5e1] text-sm mt-4">
+                <p className="text-[#f1f8f5]/80 text-sm mt-4">
                   Holiday hours may vary. Please check online for updates.
                 </p>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-[#fbbf24]">Follow Us</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#00754a]">Follow Us</h3>
               <div className="space-y-4">
-                <div className="flex gap-4">
+                <div className="flex gap-6">
                   <a 
                     href="#" 
-                    className="text-[#e5e7eb] hover:text-[#fbbf24] transition-colors"
+                    className="text-[#f1f8f5] hover:text-[#00754a] transition-colors"
                     aria-label="Instagram"
                   >
-                    <Instagram className="w-6 h-6" />
+                    <Instagram className="w-7 h-7" />
                   </a>
                   <a 
                     href="#" 
-                    className="text-[#e5e7eb] hover:text-[#fbbf24] transition-colors"
+                    className="text-[#f1f8f5] hover:text-[#00754a] transition-colors"
                     aria-label="Facebook"
                   >
-                    <Facebook className="w-6 h-6" />
+                    <Facebook className="w-7 h-7" />
                   </a>
                 </div>
-                <p className="text-[#cbd5e1] text-sm">
-                  Follow us on social media for special offers, student work showcases, and barbering tips.
+                <p className="text-[#f1f8f5]/80 text-sm">
+                  Follow us on social media for special offers and updates.
                 </p>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-[#fbbf24]">Book Now</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#00754a]">Order Online</h3>
               <div className="space-y-4">
                 <a
                   href={businessData.order_urls[0]}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#fbbf24] text-[#14213d] rounded-lg hover:bg-[#ffe066] transition-all hover:scale-105 hover:shadow-lg"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00754a] text-white rounded-full hover:bg-[#1e3932] transition-all hover:scale-105 hover:shadow-lg font-medium"
                 >
-                  <Calendar className="w-4 h-4" />
-                  Order Online
+                  <Calendar className="w-5 h-5" />
+                  Order Now
                 </a>
-                <p className="text-[#cbd5e1] text-sm">
+                <p className="text-[#f1f8f5]/80 text-sm">
                   Order your favorite coffee and pastries for pickup or delivery.
                 </p>
               </div>
@@ -402,7 +414,7 @@ export default function Home() {
           </div>
 
           {/* Map Section */}
-          <div className="mt-12 rounded-xl overflow-hidden border border-[#14213d]">
+          <div className="mt-16 rounded-2xl overflow-hidden border border-[#00754a]/20">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.601234567890!2d-73.974187684593!3d40.7590119793266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fda1b1b1b1%3A0x1a2b3c4d5e6f7g8h!2sBlue%20Bottle%20Coffee!5e0!3m2!1sen!2sus!4v1716840000000!5m2!1sen!2sus"
               width="100%"
@@ -415,7 +427,7 @@ export default function Home() {
             ></iframe>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-[#14213d] text-center text-[#cbd5e1]">
+          <div className="mt-16 pt-8 border-t border-[#00754a]/20 text-center text-[#f1f8f5]/80">
             <p className="mb-2">
               &copy; {new Date().getFullYear()} {businessData.name}. All rights reserved.
             </p>
