@@ -282,7 +282,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-[#1e3932]">About Blue Bottle Coffee</h2>
           <p className="text-[#1e3932]/80 text-lg leading-relaxed">
-            At Blue Bottle Coffee, we are passionate about crafting the perfect cup. Our journey began with a simple mission: to serve delicious, freshly roasted coffee made from the world's best beans. We believe in quality, sustainability, and creating a welcoming space for coffee lovers to gather, connect, and enjoy.
+            At Blue Bottle Coffee, we are passionate about crafting the perfect cup. Our journey began with a simple mission: to serve delicious, freshly roasted coffee made from the world best beans. We believe in quality, sustainability, and creating a welcoming space for coffee lovers to gather, connect, and enjoy.
           </p>
         </div>
       </section>
