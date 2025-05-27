@@ -20,17 +20,16 @@ export default function Header({ businessName }) {
           </div>
           <div className="flex items-center gap-8">
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-white hover:text-[#a3bffa] transition-colors">
+              <a href="#home" className="text-white hover:text-[#fbbf24] transition-colors">
                 Home
               </a>
-              <a href="#services" className="text-white hover:text-[#a3bffa] transition-colors">
-                Menu
+              <a href="#services" className="text-white hover:text-[#fbbf24] transition-colors">
+                Services
               </a>
-              <a href="#contact" className="text-white hover:text-[#a3bffa] transition-colors">
-                Contact Us
+              <a href="#contact" className="text-white hover:text-[#fbbf24] transition-colors">
+                Contact
               </a>
             </nav>
-            {/* <ThemeToggle /> */}
           </div>
         </div>
       </div>
