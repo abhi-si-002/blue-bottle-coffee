@@ -209,14 +209,17 @@ export default function Home() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-[#1e3932]/70" />
+          <div className="absolute inset-0 bg-[#1e3932]/30" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="space-y-8 animate-fade-in max-w-2xl">
             <div className="space-y-6">
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
-                Welcome to {businessData.name}
-              </h2>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-lg">
+  <span className="block text-[#fbbf24]">Welcome to</span>
+  <span className="block text-white text-opacity-95 mt-2 bg-gradient-to-r from-[#00754a] to-[#1e3932] bg-clip-text text-transparent">
+    {businessData.name}
+  </span>
+</h1>
               <p className="text-xl font-medium tracking-wide text-[#f1f8f5] border-l-4 border-[#00754a] pl-4 py-2">
                 {businessData.category}
               </p>
